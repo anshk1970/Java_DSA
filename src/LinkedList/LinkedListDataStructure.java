@@ -20,7 +20,6 @@ class LinkedList{    //User Defined Data Structure
         }
         size++;
     }
-
     void addAtHead(int val){
         Node temp = new Node(val);
         if(head==null) tail = head= temp;
@@ -30,7 +29,6 @@ class LinkedList{    //User Defined Data Structure
         }
         size++;
     }
-
     void display(){
         if(head == null) return;
         Node temp = head;
@@ -40,7 +38,6 @@ class LinkedList{    //User Defined Data Structure
         }
         System.out.println();
     }
-
     void deleteAtHead(){
         if(head== null){
             System.out.println("LIST is Empty");
@@ -50,7 +47,6 @@ class LinkedList{    //User Defined Data Structure
         if(head==null) tail = null;    //agr head null h to tail bhi null hi hogi
         size--;
     }
-
     void insertAtIdx(int val , int idx){
         if(idx<0 || idx>size) System.out.println("Invaid index");
     else if(idx==0) addAtHead(val);
@@ -67,7 +63,6 @@ class LinkedList{    //User Defined Data Structure
         }
 
     }
-
     void deleteAtIdx(int idx){
         if(idx<0|| idx>=size) {
             System.out.println("invalid index ");
@@ -86,7 +81,6 @@ class LinkedList{    //User Defined Data Structure
        if(idx == size-1) tail = temp;  // hm tail delete kar rhe hai aur temp ko tail bana dete hai
         size--;
     }
-
     int get(int idx){
         Node temp = head;
         for(int i = 1; i<= idx; i++){
