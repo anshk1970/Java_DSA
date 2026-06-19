@@ -38,8 +38,8 @@ public class DisplayList {
 
         a.next = b; b.next = c;
         c.next = d; d.next = e;
-        display(a);   // passing the head of the linkedList ( head == entire linked list)
-        displayRecursively(a);   //prints the linked list using recursion
-        displayReverse(a);  // Reverses the linked list with recursion
+//        display(a);   // passing the head of the linkedList ( head == entire linked list)
+//        displayRecursively(a);   //prints the linked list using recursion
+          displayReverse(a);  // Reverses the linked list with recursion
     }
 }
