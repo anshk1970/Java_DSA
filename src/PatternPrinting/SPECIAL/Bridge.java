@@ -25,10 +25,5 @@ public class Bridge {
             System.out.println();
         }
 
-
-
-
-
-
     }
 }

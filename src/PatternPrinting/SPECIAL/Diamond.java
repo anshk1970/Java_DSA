@@ -32,11 +32,9 @@ public class Diamond {
             }
             for(int k =1;k<=nst;k++){
                 System.out.print("* ");
-
             }
             nsp++;
             nst-=2;
-
             System.out.println();
         }
 

@@ -9,22 +9,22 @@ public class Pyramid {
 
         //Nsp-Nst Method
 
-        int nsp = num-1;
-        int nst = 1;
-
-        for(int i = 1;i<=num;i++) {
-            for(int j = 1;j<=nsp;j++){
-                System.out.print("  ");
-            }
-            for(int k =1;k<=nst;k++){
-                System.out.print("* ");
-
-            }
-            nsp--;
-            nst+=2;
-
-            System.out.println();
-        }
+//        int nsp = num-1;
+//        int nst = 1;
+//
+//        for(int i = 1;i<=num;i++) {
+//            for(int j = 1;j<=nsp;j++){
+//                System.out.print("  ");
+//            }
+//            for(int k =1;k<=nst;k++){
+//                System.out.print("* ");
+//
+//            }
+//            nsp--;
+//            nst+=2;
+//
+//            System.out.println();
+//        }
 
         //Ise add karne se Diamond ban jayega
 
@@ -47,15 +47,15 @@ public class Pyramid {
 
         // With Maths
 
-//        for(int i = 1;i<=num;i++) {
-//            for(int j = 1;j<=num-i;j++){
-//                System.out.print("  ");
-//            }
-//            for(int k =1;k<=2*i-1;k++){
-//                System.out.print("* ");
-//            }
-//            System.out.println();
-//        }
+        for(int i = 1;i<=num;i++) {
+            for(int j = 1;j<=num-i;j++){
+                System.out.print("  ");
+            }
+            for(int k =1;k<=2*i-1;k++){  //odd case
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
 
     }
 }

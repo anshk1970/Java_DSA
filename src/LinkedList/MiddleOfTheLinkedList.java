@@ -1,4 +1,7 @@
 package LinkedList;
+
+import java.io.FilterOutputStream;
+
 class Node{
     int val;
     Node next;
@@ -7,6 +10,15 @@ class Node{
     }
 }
 public class MiddleOfTheLinkedList {
+    public static int length(Node head){
+        int len = 0;
+        Node temp = head;
+        while(temp!=null){
+            temp = temp.next;
+            len++;
+        }
+        return len;
+    }
     public static void display(Node head) {
         for (Node temp = head; temp != null; temp = temp.next) {
             System.out.print(temp.val + " ");
@@ -94,20 +106,90 @@ public class MiddleOfTheLinkedList {
         fast.val = slow.val;
         slow.val = temp;
     }
+    public static boolean detectLoop(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast)
+                return true;
+        }
+        return false;
 
+    }
+    public static int firstNodeOfLoop(Node head){
+        if (head == null || head.next == null) {
+            return head.val;
+        }
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;          // 1 step forward
+            fast = fast.next.next;     // 2 steps forward
+
+            // Agar dono meet karte hain, matlab cycle pakdi gayi!r set karo
+                if (slow == fast) {
+                    // Phase 2: Cycle ka entry point dhundo
+                    fast = head; // fast ko wapas head pa
+                while (slow != fast) {
+                    slow = slow.next; // ab dono ko 1-1 step chalao
+                    fast = fast.next;
+                }
+                return slow.val; // Dono ab cycle ke start node par hain
+            }
+        }
+        return head.val;
+    }
+    public static void removeDuplicates(Node head){
+        Node i = head;
+        Node j = head;
+        while(j!=null){
+            if(i.val==j.val){
+                j= j.next;
+            }
+            else {
+                i.next = j;
+                i=j;
+            }
+        }
+        i.next = j;
+    }
+    public static void removeDuplicates2(Node head){
+        Node dummy = new Node(-1);
+        Node t = dummy;
+        Node i = head;   // i will travel linked list
+        while(i!=null){
+            if(i.next ==null || i.val !=i.next.val){
+                t.next = i;
+                t = i;
+                i = i.next;
+            }
+            else{ // i.val == i.next.val
+                Node j = i.next;
+                while(j!=null && j.val == i.val){
+                    j = j.next;
+                }
+                i =j;
+            }
+        }
+        t.next = i;   // null se jodne ke liye
+    }
 
     public static void main(String[] args) {
         Node a = new Node(10);
         Node b = new Node(20);
-        Node c = new Node(30);
+        Node c = new Node(20);
         Node d = new Node(40);
-        Node e = new Node(50);
+        Node e = new Node(40);
         Node f = new Node(60);
         a.next = b;
         b.next = c;
         c.next = d;
         d.next = e;
         e.next = f;
+//        e.next = c;   // for detect loop
 
           // agr odd hai to middle
           // agr even hai to right middle
@@ -116,7 +198,11 @@ public class MiddleOfTheLinkedList {
 //        deleteMiddle(a);
 //        System.out.println(kthFromEnd(a,2));
 //        removeNthFromEnd(a,2);
-        swap(a,2);
+//        swap(a,2);
+//        System.out.println(detectLoop(a));
+//        System.out.println(firstNodeOfLoop(a));
+//        removeDuplicates(a);
+//        removeDuplicates2(a);
         display(a);
     }
 

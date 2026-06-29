@@ -5,6 +5,8 @@ class LinkedList{    //User Defined Data Structure
     Node head;  //null
     Node tail;  //null
     int size;
+
+
     void addAtTail(int val){
         Node temp = new Node(val);   //  naya node ban rha h
         if(tail == null) head = tail = temp;
