@@ -1,7 +1,5 @@
 package LinkedList;
 
-import java.io.FilterOutputStream;
-
 class Node{
     int val;
     Node next;
@@ -9,7 +7,7 @@ class Node{
         this.val = val;
     }
 }
-public class MiddleOfTheLinkedList {
+public class LinkedListOperations1 {
     public static int length(Node head){
         int len = 0;
         Node temp = head;
