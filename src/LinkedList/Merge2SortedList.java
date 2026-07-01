@@ -42,6 +42,30 @@ public class Merge2SortedList {
         return dummy.next;
 
     }
+    public static Node partition(Node head , int x){
+        Node d1 = new Node(-1);
+        Node d2 = new Node(-1);
+        Node t1 = d1;
+        Node t2 = d2;
+        Node temp = head;
+
+        while(temp!=null){
+            if(temp.val<x){
+                t1.next = temp;
+                t1 = t1.next;
+            }
+            else{
+                t2.next = temp;
+                t2 = t2.next;
+            }
+            temp = temp.next;
+        }
+        t1.next = d2.next;
+        t2.next = null;
+        return d1.next;
+
+    }
+
     public static void main(String[] args) {
         //First List
         Node a = new Node(30);
@@ -54,11 +78,11 @@ public class Merge2SortedList {
         c.next = d;
 
         //Second List
-        Node A = new Node(20);
-        Node B = new Node(50);
+        Node A = new Node(90);
+        Node B = new Node(10);
         Node C = new Node(70);
-        Node D = new Node(80);
-        Node E = new Node(90);
+        Node D = new Node(30);
+        Node E = new Node(20);
 
         A.next = B;
         B.next = C;
@@ -66,7 +90,9 @@ public class Merge2SortedList {
         D.next = E;
 
 //MergeSortedList(a,A);
-        display(MergeSort(a));
+//        display(MergeSort(a));
 
+
+display(partition(A,70));
     }
 }
