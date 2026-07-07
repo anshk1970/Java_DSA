@@ -16,8 +16,10 @@ public class Plus {
         System.out.println("Ansh"+7+10);   //Ansh710
         System.out.println(7+"Ansh"+10);   //7Ansh10
         System.out.println("Ansh"+(7+10));  //Ansh17
-        System.out.println('A'+"Ansh");  //AAnsh
-        System.out.println('A'+7+"Ansh"); // 72Ansh
+        System.out.println('A'+"Ansh");    //AAnsh
+        System.out.println('A'+7+"Ansh");  // 72Ansh
+
+
 
     }
 }
