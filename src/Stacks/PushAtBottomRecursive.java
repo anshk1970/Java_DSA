@@ -1,5 +1,7 @@
 package Stacks;
 import java.util.Stack;
+
+
 public class PushAtBottomRecursive {
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
@@ -11,11 +13,19 @@ public class PushAtBottomRecursive {
         System.out.println(st);  //[10, 20, 30, 40]
         pushAtBottom(st,ele);
         System.out.println(st);  //[50, 10, 20, 30, 40]
-
+        reverse(st);   //recursively
+        System.out.println(st);
 
 
 
     }
+    private static void reverse(Stack<Integer> st){
+       if(st.size()<=1) return;
+        int top =  st.pop();
+        reverse(st);  //magic
+        pushAtBottom(st,top);
+    }
+
 
     private static void pushAtBottom(Stack<Integer> st, int ele){
         if(st.size()==0){
