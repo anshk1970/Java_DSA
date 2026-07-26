@@ -33,12 +33,24 @@ public class Implementation {
         System.out.println();
         System.out.println(size(a));
         System.out.println(sum(a));
+        System.out.println(max(a));
+        System.out.println(levels(a));
 
     }
-    private static int sum(Node root){
-        if(root == null) return 0;
-        return root.val + sum(root.left)+ size(root.right);
-    }
+        private static int levels(Node root){
+        if(root==null) return 0;
+        return 1+ Math.max(levels(root.left),levels(root.right));
+        }
+
+
+        private static int sum(Node root){
+            if(root == null) return 0;
+            return root.val + sum(root.left) + sum(root.right);
+        }
+        private static int max(Node root){
+             if(root == null) return Integer.MIN_VALUE;
+             return Math.max(root.val,Math.max(max(root.left),max(root.right)));
+        }
 
     private static int size(Node root) {
      return (root==null) ? 0 : 1+size(root.left)+size(root.right);
