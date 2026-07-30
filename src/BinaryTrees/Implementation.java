@@ -54,13 +54,14 @@ public class Implementation {
 
     private static int size(Node root) {
      return (root==null) ? 0 : 1+size(root.left)+size(root.right);
+
     }
 
     private static void display(Node root) {
         if(root==null) return;
         System.out.print(root.val+" ");
-        display(root.left);   // left ki sari values print kr dega
-        display(root.right);  // right ki sari values print kr dega
+        display(root.left);    // left ki sari values print kr dega
+        display(root.right);  // right  ki sari values print kr dega
 
     }
 }
