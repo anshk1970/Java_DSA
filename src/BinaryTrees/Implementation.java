@@ -27,9 +27,10 @@ public class Implementation {
         //Attachments
         a.left = b; a.right = c;
         b.left = d; b.right = e;
-        c.left = f; c.right = g;
+        c.left = f;
+        c.right = g;
 
-        display(a);
+        preOrder(a);
         System.out.println();
         System.out.println(size(a));
         System.out.println(sum(a));
@@ -41,8 +42,6 @@ public class Implementation {
         if(root==null) return 0;
         return 1+ Math.max(levels(root.left),levels(root.right));
         }
-
-
         private static int sum(Node root){
             if(root == null) return 0;
             return root.val + sum(root.left) + sum(root.right);
@@ -51,17 +50,18 @@ public class Implementation {
              if(root == null) return Integer.MIN_VALUE;
              return Math.max(root.val,Math.max(max(root.left),max(root.right)));
         }
-
-    private static int size(Node root) {
-     return (root==null) ? 0 : 1+size(root.left)+size(root.right);
+        private static int size(Node root) {
+        if(root==null) return 0;
+//        if(root.left==null && root.right==null) return 1;
+        return 1 + size(root.left) + size(root.right);
 
     }
 
-    private static void display(Node root) {
+    private static void preOrder(Node root) {
         if(root==null) return;
         System.out.print(root.val+" ");
-        display(root.left);    // left ki sari values print kr dega
-        display(root.right);  // right  ki sari values print kr dega
+        preOrder(root.left);    // left ki sari values print kr dega
+        preOrder(root.right);  // right  ki sari values print kr dega
 
     }
 }
