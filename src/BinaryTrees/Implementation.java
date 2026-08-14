@@ -51,8 +51,8 @@ public class Implementation {
 //        System.out.println(max(a));
 //        System.out.println(pro(a));
 //        System.out.println(levels(a));
-        levelOrder(a);
-
+//        levelOrder(a);
+levelOrderLineWise(a);
     }
         private static int levels(Node root){
         if(root==null) return 0;
