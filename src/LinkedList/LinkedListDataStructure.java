@@ -6,6 +6,18 @@ class LinkedList{    //User Defined Data Structure
     Node tail;  //null
     int size;
 
+    int search(int val){
+        if(head==null) return -1;
+        Node temp = head;
+        int idx = 0;
+        while(temp!=null){
+            if(temp.val==val) return idx;
+            temp=temp.next;
+            idx++;
+        }
+        return -1;
+
+    }
 
     void addAtTail(int val){
         Node temp = new Node(val);   //  naya node ban rha h
@@ -98,15 +110,15 @@ public class LinkedListDataStructure {
         LinkedList ll = new LinkedList();   // nayi linked list ban rhi hai
         ll.addAtTail(10); ll.display();  //10
         ll.addAtTail(20); ll.display();  //10 20
-        ll.addAtHead(60); ll.display();  //60 10 20
-        ll.addAtTail(40); ll.display();  //60 10 20 40
-        ll.addAtTail(50); ll.display();  //60 10 20 40 50
-        ll.addAtHead(70); ll.display();  //70 60 10 20 40 50
-        ll.deleteAtHead();    ll.display();  //60 10 20 40 50
-        ll.insertAtIdx(30,3); ll.display();  //60 10 20 30 40 50
-        ll.deleteAtIdx(3); ll.display();      //60 10 20 40 50
-        System.out.println(ll.get(3));        //40
-
+        ll.addAtHead(30); ll.display();  //30 10 20
+        ll.addAtTail(40); ll.display();  //30 10 20 40
+        ll.addAtHead(50); ll.display();  //50 10 20 40 50
+        ll.addAtTail(60); ll.display();  //50 30 10 20 40 60
+        ll.deleteAtHead();    ll.display();  //30 10 20 40 60
+        ll.insertAtIdx(77,3); ll.display();  //30 10 20 77 40 60
+        ll.deleteAtIdx(2); ll.display();      //30 10 77 40 60
+        System.out.println(ll.get(4));        //60
+        System.out.println(ll.search(10)); //1
 
     }
 }
