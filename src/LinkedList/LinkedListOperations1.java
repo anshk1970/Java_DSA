@@ -48,21 +48,23 @@ public class LinkedListOperations1 {
 
     }
     public static void deleteMiddle(Node head){
+
         Node slow = head;
         Node fast =  head;
+        Node prev = null;
         while(fast!=null && fast.next!=null){
+            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-        slow.val = slow.next.val;
-        slow.next = slow.next.next;
+     prev.next = slow.next;
     }
     public static int kthFromEnd(Node head, int k){
         Node slow = head;
         Node fast = head;
         for(int i = 1;i<=k;i++){
             if(fast==null)  return -1 ;
-            fast = fast.next;
+            fast = fast.next;  // fast ko k lead de do
         }
         while(fast!=null){
             slow = slow.next;
@@ -193,7 +195,7 @@ public class LinkedListOperations1 {
           // agr even hai to right middle
 //        System.out.println(middle(a));
 //        System.out.println(middleSlowFast(a));
-//        deleteMiddle(a);
+        deleteMiddle(a);
 //        System.out.println(kthFromEnd(a,2));
 //        removeNthFromEnd(a,2);
 //        swap(a,2);
@@ -201,6 +203,7 @@ public class LinkedListOperations1 {
 //        System.out.println(firstNodeOfLoop(a));
 //        removeDuplicates(a);
 //        removeDuplicates2(a);
+
         display(a);
     }
 
