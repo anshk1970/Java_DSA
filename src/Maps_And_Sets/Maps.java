@@ -8,6 +8,10 @@ public class Maps {
         map.put("Ansh",20);map.put("Ashu",22);
         map.put("Navya",17);map.put("Nandu",18);
 
+        for(String key : map.keySet()){
+            System.out.println(key+" "+map.get(key));
+        }
+
 
 
 //        System.out.println(map+" "+map.size());

@@ -11,7 +11,11 @@ public class Sets_STL {
         set.add(21);set.add(2);
         set.add(11);set.add(45);set.add(3);
 
-        for(int ele: set){
+//        for(int ele : set){   //ERROR
+//            set.remove(ele);
+//        }
+        set.clear();
+        for(int ele : set){
             System.out.print(ele+" ");
         }
 
