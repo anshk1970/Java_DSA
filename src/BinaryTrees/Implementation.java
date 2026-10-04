@@ -1,5 +1,4 @@
 package BinaryTrees;
-
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -45,20 +44,20 @@ public class Implementation {
 //        System.out.println();
 //        inOrder(a);
 //        System.out.println();
-//        postOrder(a);
+        postOrder(a);
 //        System.out.println(size(a));
 //        System.out.println(sum(a));
 //        System.out.println(max(a));
 //        System.out.println(pro(a));
 //        System.out.println(levels(a));
 //        levelOrder(a);
-levelOrderLineWise(a);
+//          levelOrderLineWise(a);
     }
         private static int levels(Node root){
         if(root==null) return 0;
         return 1+ Math.max(levels(root.left),levels(root.right));
         }
-        private static int sum(Node root){
+        private static int sum(Node root) {
             if(root == null) return 0;
             return root.val + sum(root.left) + sum(root.right);
         }
@@ -76,17 +75,16 @@ levelOrderLineWise(a);
         return 1 + size(root.left) + size(root.right);
 
     }
-        private static void preOrder(Node root) {
+
+    private static void preOrder(Node root) {
             if (root == null) return;
             System.out.print(root.val + " ");
             preOrder(root.left);    // left ki sari values print kr dega
             preOrder(root.right);  // right  ki sari values print kr dega
 
         }
-
     private static void inOrder(Node root) {
         if(root==null) return;
-
         inOrder(root.left);    // left ki sari values print kr dega
         System.out.print(root.val+" ");
         inOrder(root.right);  // right  ki sari values print kr dega
@@ -94,11 +92,12 @@ levelOrderLineWise(a);
     }
     private static void postOrder(Node root) {
         if(root==null) return;
-
         postOrder(root.left);    // left ki sari values print kr dega
         postOrder(root.right);  // right  ki sari values print kr dega
         System.out.print(root.val+" ");
     }
+
+
     private static void levelOrder(Node root){
         Queue<Node> q = new LinkedList<>();
         q.add(root);

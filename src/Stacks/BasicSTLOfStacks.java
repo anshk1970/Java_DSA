@@ -8,7 +8,7 @@ public class BasicSTLOfStacks {
 //        System.out.println(st.isEmpty());   //true
 //        System.out.println(st.peek()); // EmptyStackException
         st.push("Ansh");
-        st.push("Muskan");
+        st.push("Navya");
         st.push("Nandu");
         st.push("Ash");
         st.push("OTC");
