@@ -101,7 +101,7 @@ public class Implementation {
     private static void levelOrder(Node root){
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        while(q.size()>0){
+        while(q.size()>0){ 
             Node front = q.remove();
             System.out.print(front.val+" ");
             if(front.left!=null) q.add(front.left);
