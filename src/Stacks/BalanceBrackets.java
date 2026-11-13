@@ -19,8 +19,6 @@ public class BalanceBrackets {
                 if(sameStyle(top,ch)) st.pop();
                 else return false;
             }
-
-
         }
         return (st.size()==0);
     }

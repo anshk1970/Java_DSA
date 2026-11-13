@@ -16,16 +16,16 @@ public class MaxElm {
         System.out.println(row +" "+max);
 
 //        int[][] arr = {{16,24,34,46,53},{12,35,21,67,33}};
-//        int max = arr[0][0];
+//        int min = arr[0][0];
 //        int row = -1;
 //        for(int i = 0;i<arr.length;i++) {
 //            for (int j = 0; j < arr[0].length; j++) {
-//                if (arr[i][j] < max) {
-//                    max = arr[i][j];
+//                if (arr[i][j] < min) {
+//                    min = arr[i][j];
 //                    row = i;                                    //Min NUM
 //                }
 //            }
 //        }
-//        System.out.println(row +" "+max);
+//        System.out.println(row +" "+min);
     }
 }

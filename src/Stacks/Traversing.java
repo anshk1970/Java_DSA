@@ -22,5 +22,6 @@ public class Traversing {
         }
         // T.C = O(n)
         // A.S = O(n)
+        System.out.println(st);
     }
 }
